@@ -1,7 +1,9 @@
 ### 클라우드 쉘 사용 ###
  - 터미널 대신 명령어 내릴 수 있는 AWS 클라우드 내 서비스
  - 오른쪽 상단 클라우드쉘 표시 클릭(일부 Region 서비스 이용 불가능, 한국은 가능)
+
 ![](https://velog.velcdn.com/images/xodbs1123/post/e82ea977-ddab-40f0-a114-6fc0b294c441/image.png)
+
 - CLI(터미널)은 '--region' 명령어를 통해 API 호출할 Region 지정 가능
 - 하지만, CloudShell엔 기본 Region이 로그인 된 Region으로 나옴
 - CloudShell은 전체 저장소가 존재
