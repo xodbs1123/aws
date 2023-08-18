@@ -81,6 +81,7 @@
    ![](https://velog.velcdn.com/images/xodbs1123/post/55f4489a-a42d-4259-b5f3-dd24f062564f/image.png)
 
    - Json에 적용 된 모습
+
   ![](https://velog.velcdn.com/images/xodbs1123/post/3aca4f2b-55e0-474a-be63-df7ecd8a0208/image.png)
 
 - 그룹 제거는 User Groups에서 제거 할 그룹 선택, 그룹명 입력 후 제거
@@ -113,18 +114,63 @@
 - 루트 계정에 MFA 설정
 	
 	
-    1. 계정 이름 클릭 > 보안 자격 증명 클릭(My Security Credentials)
+1. 계정 이름 클릭 > 보안 자격 증명 클릭(My Security Credentials)
+       
 ![](https://velog.velcdn.com/images/xodbs1123/post/0bb0744c-9284-47a0-ace8-337c538398a9/image.png)
 
-	2. MFA 활성화 
+2. MFA 활성화
+
 ![](https://velog.velcdn.com/images/xodbs1123/post/7791d4ec-99cc-4245-a1fe-2121e286a021/image.png)
 
-	3. Device 선택
+3. Device 선택
+
 ![](https://velog.velcdn.com/images/xodbs1123/post/97fc7ef7-9e38-43a4-8f99-c6d784060e92/image.png)
 	
-    	4. 호환되는 애플리케이션 설치 ex) Authy
-        5. Authy 어플의 Add Account에 들어가서 QR 코드 스캔
-        6. 계정의 닉네임과 로고 선택 후 Save
-		7. MFA 코드1 확인 후 입력, 15초 후 MFA 코드2 확인 후 입력
-		8. MFA 추가 클릭
+4. 호환되는 애플리케이션 설치 ex) Authy
+5. Authy 어플의 Add Account에 들어가서 QR 코드 스캔
+6. 계정의 닉네임과 로고 선택 후 Save
+7. MFA 코드1 확인 후 입력, 15초 후 MFA 코드2 확인 후 입력
+8. MFA 추가 클릭
+
 ![](https://velog.velcdn.com/images/xodbs1123/post/e93e782f-a316-4d99-b8f1-6937206e2d20/image.png)
+
+
+### IAM Role ###
+- 일부 AWS 서비스를 사용하기 위해서는 루트 계정 활용
+- 이때, IAM Role을 생성하여 권한을 부여 받아야함
+   - ex) 'EC2' 가상 서버를 만들어 AWS에서 특정 작업을 수행 가능
+      그러기 위해서는 ECE Instance에 권한을 부여해야 함
+      이를 위해 IAM Role을 만들어 하나의 개채로 만들어 AWS에 특정 정보에 접근 가능하도록 함
+  ![](https://velog.velcdn.com/images/xodbs1123/post/c339fc15-bf15-4350-8ea3-eb52d54f86d4/image.png)
+- ' EC2 Instance Roles ',  ' Lambda Function Roles ',  ' Roles for CloudFormation ' 등 여러 Role이 존재      
+
+
+### Role 생성 ###
+1.  Access management > Roels > Create role
+2. Trusted entity type과 Use case 선택 
+   - 시험은 AWS service 관련해서만 나옴
+   ![](https://velog.velcdn.com/images/xodbs1123/post/3bf02f2d-77b9-4482-8a85-5a8d1bdf79c7/image.png)
+3. 권한 추가
+4. Role 이름 설정
+	                  
+### IAM Security Tools ###
+- IAM Credentials Report (루트 계정 수준에서 가능)
+  - 사용자와 다양한 Credentials 포함
+- IAM Access Advisor (사용자 계정 수준 가능)
+  - 사용자에게 부여된 서비스 권한과 마지막으로 Access한 시간이 보임
+  
+  
+### Credential report ###
+- IAM > Access reports > Credential report > Download Report
+- 어떤 사용자가 비밀번호를 변경하지 않았는지, 계정을 사용하는지 등 파악할 때 유용
+- 보안 측면에서 어떤 사용자를 주목해야 하는지 발견하는 데 도움이 된다
+![](https://velog.velcdn.com/images/xodbs1123/post/5435cb48-ab61-437a-b5dd-0b1179133b63/image.png)
+
+
+### IAM Access Advisor ###
+- IAM > Users > User name > Acces Advisor
+- 보통 최근 4시간 동안의 활동 내역을 보여줌
+- 사용하지 않는 권한들을 확인 후 삭제할 때 도움이 됨
+![](https://velog.velcdn.com/images/xodbs1123/post/df3c70bc-3d08-497f-be4c-a4b00401db85/image.png)
+
+  
