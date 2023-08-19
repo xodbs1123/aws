@@ -1,0 +1,55 @@
+### S3 Storage Classes ###
+- Amazon S3 Standard - General Purpose
+  - 가용성 99.99%
+  - 자주 액세스하는 데이터에 사용
+  - 기본적으로 사용하는 스토리지 유형
+  - 지연 시간이 짧고 처리량이 높음
+  - AWS에서 두 개의 기능 장애를 동시에 버틸 수 있음
+  - 빅데이터분석, 모바일과 게임 애플리케이션, 콘텐츠 배포 등에 사용
+- Amazon S3 Standard-Infrequent Access (IA)
+  - 자주 액세스 X, 필요한 경우 빠르게 액세스해야 하는 데이터
+  - S3 Standard 보다 비용은 적게 들지만 검색 비용 발생
+  - 가용성 99.9%
+  - 재해 복구와 백업에 사용
+- Amazon S3 One Zone-Infrequent Access 
+  - 단일 AZ 내에서는 높은 내구성을 가짐
+  - 하지만 AZ가 파괴된 경우 데이터를 잃게 됨
+  - 가용성 99.5%
+  - 온프레미스 데이터를 2차 백업하거나 재생 가능한 데이터를 저장하는 데 사용
+- Amazon S3 Glacier Instant (겸색 즉시 처리 됨) Retrieval
+  - 콜드 스토리지, 아카이빙과 백업을 위한 저비용 객체 스토리지
+  - 스토리지 비용, 검색 비용이 발생
+  - 밀리초 단위로 검색 가능
+  - 분기에 한 번 액세스하는 데이터에 아주 적합
+  - 최소 보관 기간이 90일, 즉 백업이지만 밀리초 이내에 액세스하는 경우 적합
+- Amazon S3 Glacier Flexible (검색 처리까지 최대 12시간) Retrieval
+  - 콜드 스토리지, 아카이빙과 백업을 위한 저비용 객체 스토리지
+  - 스토리지 비용, 검색 비용이 발생
+  - Expedited
+    - 데이터를 1 ~ 5분 이내에 받을 수 있음
+  - Standard
+    - 데이터를 돌려받는 데 3 ~ 5시간 소요
+  - Bulk
+    - 무료, 데이터를 돌려받는 데 5 ~ 12시간 소요
+  - 최소 보관 기간 90일    
+- Amazon S3 Glacier Deep Archive
+  - 콜드 스토리지, 아카이빙과 백업을 위한 저비용 객체 스토리지
+  - 스토리지 비용, 검색 비용이 발생
+  - 데이터 장기 보관을 위해 사용
+  - Standard
+    - 데이터 돌려받는 데 12시간 소요
+  - Bulk
+    - 데이터 돌려받는 데 48시간 소요
+  - 비용 가장 저렴함
+  - 최소 보관 기간 180일
+- Amazon S3 Intelligent Tiering
+  - 검색 비용이 없음
+  - 소액의 월별 모니터링 및 티어링 비용 발생
+  - 접근 패턴에 따라 자동으로 스토리지 티어를 정해주기 때문에 편하게 스토리지 관리 가능
+  - Frequent Access tire : 자동 및 기본 티어
+  - Infrequent Access tire : 자동 및 30일 동안 액세스하지 않는 객체 전용 티어
+  - Archive Instant Access tire : 자동 및 90일 동안 액세스하지 않는 객체 전용 티어
+  - Archive Access tire : 선택 및 90일에서 700일 이상까지 구성
+  - Deep Archive Access tire : 선택 및 180일에서 700일 이상 액세스하지 않는 객체에 구성
+  
+  ![](https://velog.velcdn.com/images/xodbs1123/post/f6dd13aa-e5ae-4850-a5a9-ecb482dfee5c/image.png)
