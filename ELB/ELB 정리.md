@@ -207,3 +207,24 @@
 2. 이후 DNS ID로 새탭 열고 새로고침하면 고정 IP로만 접속 되는 것을 확인 할 수 있음
 
 ![](https://velog.velcdn.com/images/xodbs1123/post/3b21757c-6dd7-4f0d-9d19-3ec82ad609fe/image.png)
+
+### Cross-Zone Load Balancing ###
+![](https://velog.velcdn.com/images/xodbs1123/post/a57a25c0-75db-4e2d-a0df-611a60ab2a3e/image.png)
+
+- 교차 영역 로드 밸런싱을 쓰면, 각각의 로드 밸런서 인스턴스가 모든 가용 영역에 등록 된 인스턴스에 트래픽을 50씩 균등하게 분배
+  - 인스턴스 수가 10개니까 균등하게 10씩 할당 받음
+  
+
+![](https://velog.velcdn.com/images/xodbs1123/post/2cf94699-2186-4d4f-8ee6-ce89b85bc5cd/image.png)
+
+- 영역을 교차하지 않고 부하를 분산, Elastic 로드 밸런서 노드의 인스턴스로 분산
+- 트래픽 분산 방법은 사진과 같음, 특정 영역에 트래픽이 더 분산됨
+- 정답은 없다, 상황에 맞게 고려해서 사용하면 된다
+------------
+		
+- ALB는 기본적으로 교차 영역 로드 밸런싱이 활성화 
+  - 따라서 AZ 간의 데이터 이동에 비용이 들지 않음
+- NLB와 GWLB는 기본적으로 교차 영역 로드 밸런싱이 비활성화
+  - 활성화 하려면 비용 지불해야 함, AZ 사이 데이터를 옮기려면 비용이 발생하므로
+- CLB는 기본적으로 교차 영역 로드 밸런싱 비활성화
+  - 활성화시켜도 AZ 간 데이터 이동 비용 발생하지 않음
