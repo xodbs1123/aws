@@ -1,0 +1,143 @@
+#### Q_1) 수백 TB의 데이터를 Amazon S3로 이전한 후, EC2 인스턴스 플릿을 사용해 처리해야 합니다. 광대역은 1Gbit/초입니다. 여러분은 데이터를 더 빠르게 이전하고, 가능하면 전송 중에 데이터를 처리했으면 합니다. 어떤 방법을 추천할 수 있을까요? ####
+	
+    a. 자체 네트워크 사용하기
+    b. Snowcone 사용하기
+    c. AWS 데이터 이전 사용하기
+    d. Snowball Edge사용하기
+   
+#### Q_2) 테이프 백업에 가상 인피니트 스토리지를 노출하려고 합니다. 여러분은 사용 중인 것과 동일한 소프트웨어를 유지하고, iSCSI와 호환 가능한 인터페이스를 사용하려 합니다. 어떤 방법을 사용해야 할까요? ####
+	a. AWS Snowball
+    b. AWS Storage Gateway - 테이프 게이트웨이
+    c. AWS Storage Gateway - 볼륨 게이트웨이
+    d. AWS Storage Gateway - 파일 게이트웨이
+    
+#### Q_3) 여러분의 EC2 Windows 서버는 Windows의 보안 메커니즘을 준수하며, Microsoft Active Directory와 통합된 네트워크 파일 시스템을 마운트하여 일부 데이터를 공유해야 합니다. 어떤 방법을 추천할 수 있을까요? ####
+	a. Windows용 Amazon FSx(파일 서버)
+    b. Amazon EFS
+    c. Lustre용 Amazon FSx
+    d. 파일 게이트웨이를 지닌 Amazon S3
+    
+#### Q_4) 여러분은 수백 TB의 데이터를 AWS S3로 최대한 빨리 이전시켜야 합니다. 여러분의 네트워크 대역폭을 사용해보려 했으나, 업로드 프로세스가 완료되기까지 약 3주가 소요됩니다. 이런 경우 어떤 접근법이 권장될까요? ####
+	a. AWS Storage Gateway - 볼륨 Gateway
+    b. S3 멀티파트 업로드
+    c. AWS Snowball 엣지
+    d. AWS 데이터 이전 서비스
+
+#### Q_5) S3에 대규모의 데이터셋이 저장되어 있습니다. 여러분은 NFS, 혹은 SMB 프로토콜을 사용해 온프레미스 서버를 통해 이 데이터셋에 액세스하려 합니다. 또한, 온프레미스 Microsoft AD를 통해 이러한 파일에 대한 액세스를 인증하고자 합니다. 무엇을 사용해야 할까요? ####
+    a. AWS Storage Gateway - 테이프 게이트웨이
+    b. AWS Storage Gateway - 볼륨 게이트웨이
+    c. AWS Storage Gateway - 파일 게이트웨이
+	d. AWS 데이터 이전 서비스
+
+#### Q_6) 기업의 인프라를 온프레미스에서 AWS Cloud로 이전시킬 계획을 가지고 있습니다. 여러분은 이전시키려는 온프레미스 Microsoft Windows 파일 서버를 갖고 있습니다. 어떤 AWS 서비스를 사용하는 것이 가장 적절할까요? ####
+	a. Windows용 Amazon Fsx(파일 서버)
+    b. AWS Storage Gateway - 파일 게이트웨이 
+    c. AWS가 관리하는 Microsft AD
+
+#### Q_7) 고성능 컴퓨팅(HPC)과 전산 유전학 연구를 수행하기 위해 IOPS를 최대화해 줄 분산 POSIX 준수 파일 시스템이 필요한 상황입니다. 이 파일 시스템은 수백만 개의 IOPS로 손쉽게 스케일링할 수 있어야 합니다. 어떤 방법을 추천할 수 있을까요? ####
+	a. Max를 가진 EFS IO 활성화
+    b. Lustre용 Amazon FSxLUster용 Amazon FSx
+    c. EC2 인스턴스 상에 마운팅된 Amazon S3
+    d. EC2 인스턴스 스토어
+
+#### Q_8) FSx 파일 시스템에 있는 다음 배포 옵션 중에서 AZ 내에 복사된 장기 스토리지를 제공하는 것은 무엇인가요? ####
+	a. 스크래치 파일 시스템
+    b. 영구 파일 시스템
+
+#### Q_9) 다음 중 AWS 전송 제품군이 지원하지 않는 프로토콜은 무엇인가요? ####
+	a. 파일 전송 프로토콜 (FTP)
+    b. SSL을 통한 파일 전송 프로토콜 (FTP)
+    c. 전송층 보안 (TLS)
+    d. 보안 파일 전송 프로토콜 (FTP)
+    
+ #### Q_10) 회사는 AWS의 FSx for Windows 파일 서버 스토리지에 저장된 수많은 파일과 데이터를 사용하고 있습니다. 이 파일들은 현재 AWS에 호스팅된 리소스에서 사용됩니다. 이 파일들을 온프레미스에서 짧은 지연 시간으로 액세스할 수 있어야 합니다. 이를 달성하는 데 도움이 될 만한 AWS 서비스는 무엇입니까? ####
+	a. S3 파일 게이트웨이
+    b. FSx for Windows File Server 온프레미스
+    c. FSx 파일 게이트웨이
+    d. 볼륨 게이트웨이
+
+#### Q_11) 솔루션 아키텍트가 한 스타트업의 온프레미스 서버를 AWS로 이전하는 작업을 계획하고 있습니다. 현재 회사의 인프라는 공유 NFS 스토리지에 호스팅된 여러 개의 서버와 30TB의 데이터로 구성되어 있습니다. 아키텍트는 Amazon S3를 사용해 데이터를 호스팅하기로 결정했습니다. 데이터를 온프레미스에서 S3로 효율적으로 이전할 수 있는 AWS 서비스는 무엇입니까? ####
+	a. AWS Storage Tape Gateway
+    b. Amazon EBS
+    c. AWS Transfer Family
+    d. AWS DataSync
+    
+#### Q_12) S3 버킷에 있는 다량의 데이터를 EFS 파일 시스템으로 옮기는 데 가장 적합한 AWS 서비스는 무엇입니까? ####
+	a. AWS Snowball
+    b. AWS DataSync
+    c. AWS Transfer Family
+    d. AWS Backup
+    
+#### Q_13) 한 머신 러닝 업체가 S3 버킷에 호스팅된 데이터 세트를 기반으로 연구를 진행하고 있습니다. 업체는 다른 사람들이 연구에 활용할 수 있도록 데이터 세트 중 일부를 공개하기로 결정했지만, S3 버킷 자체를 퍼블릭(Public)으로 설정하는 건 원치 않습니다. 또한 데이트 세트는 FTP 프로토콜로 접근할 수 있어야 합니다. 최소한의 노력으로 이 요구 사항을 충족하려면 어떻게 해야 합니까? ####
+	a. AWS Transfer Family를 사용
+    b. FTP 서버가 설치된 EC2 인스턴스를 만들고 S3에 있는 데이터를 EC2 인스턴스로 복사한다
+    c. AWS Storage Gateway를 사용한다
+    d. S3의 데이터를 복사해 EFS 파일 시스템으로 옮긴 후, FTP 프로토콜에 노출시킨다
+
+#### Q_14) Amazon FSx for NetApp ONTAP는 다음 중 ………………를 제외한 나머지 프로토콜과 호환됩니다. ####
+	a. NFS
+    b. SMB
+    c. FTP
+    d. iSCSI
+    
+#### Q_15) 온프레미스 ZFS 파일 시스템을 AWS로 마이그레이션 하는데 가장 적합한 AWS 서비스는 무엇입니까? ####
+	a. Amazon FSx for OpenZFS
+    b. Amazon FSx for NetApp ONTAP
+    c. Amazon FSx for Windows File Server
+    d. Amazon FSx for Luster
+    
+#### Q_16) 회사에서는 Amazon S3 파일 게이트웨이를 실행해 S3 버킷에 데이터를 호스팅하고 있으며, SMB를 사용해 해당 데이터를 온프레미스에 마운트할 수 있습니다. 현재 데이터는 S3 Standard 스토리지 클래스에 호스팅되어 있는데 S3에 드는 비용을 절감하기 위해 데이터 중 일부를 S3 Glacier로 옮기기로 결정했습니다. 데이터를 S3 Glacier로 자동으로 옮길 수 있는 가장 효율적인 방법은 무엇입니까? ####
+	a. S3 Glacier로 데이터를 옮기는 Lambda 함수를 만들고 Amazon EventBridge를 사용해 매일 주기적으로 실행시킨다
+    b. S3 배치 작업을 사용해 S3에 있는 모든 파일을 매일 S3 Glacier로 이동시킨다
+    c. S3 생명 주기 정책을 사용한다
+    d. AWS DataSync를 사용하여 매일 S3 Glacier로 데이터를 복제한다
+    e. 데이터를 S3 Glacier로 직접 전송하도록 S3 File Gateway를 구성한다
+    
+#### Q_17) 사내 서버에 있는 중요 파일과 문서를 주기적으로 AWS에 동기화시켜 복사본을 따로 보관하고자 합니다. 이럴 경우에 도움을 줄 수 있는 AWS 서비스는 무엇입니까? ####
+	a. AWS Database Migration Service
+    b. Amazon EFS
+    c. AWS DataSync
+ 
+
+
+---
+#### 정답 및 해설 #### 
+Q_1. (d)
+Snowball Edge는 컴퓨팅 능력을 갖추고 있으며, 데이터가 Snowball로 이동하는 동안 데이터를 사전에 처리할 수 있도록 해주므로 정답입니다.
+
+Q_2. (b)
+
+Q_3. (a)
+
+Q_4. (c)
+
+Q_5. (b)
+
+Q_6. (a)
+
+Q_7. (b)
+
+Q_8. (b)
+이는 데이터가 동일한 AZ 내에서 복제되는 장기 스토리지를 제공합니다. 실패한 파일들은 수 분 내로 교체됩니다.
+
+Q_9. (c)
+AWS 전송 제품군은 FTP 프로토콜을 사용해 S3, 혹은 EFS 내부/외부로 파일을 전송하는 관리 서비스입니다. 따라서 TLS를 지원하지 않습니다.
+
+Q_10. (c)
+
+Q_11. (d)
+
+Q_12. (b)
+
+Q_13. (a)
+
+Q_14. (c)
+
+Q_15. (c)
+서버 이름 표식(SNI)을 사용하면 동일한 리스너 상에 있는, 자체 SSL 인증서를 가진 다수의 HTTPS 애플리케이션을 노출시킬 수 있습니다.
+
+Q_16. (c)
+
+Q_17. (c)
+AWS DataSync는 온프레미스 스토리지 시스템과 AWS 스토리지 서비스 또는 AWS 스토리지 서비스 간의 데이터 이동을 단순화, 자동화, 가속화시켜주는 온라인 데이터 전송 서비스입니다.
+
