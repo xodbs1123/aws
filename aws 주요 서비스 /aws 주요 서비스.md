@@ -321,8 +321,8 @@ DAX는 복잡한 통합 코드 없이 캐싱 로직을 자동으로 처리
 
 ### Cloud Formation ###
 - AWS CloudFormation은 AWS에서 제공하는 대표적인 IaC기반의 서비스
-
 - CloudFormation을 사용하면 VPC, EC2, Lambda 등과 같은 리소스를 수동으로 생성할 필요 없이 리소스들을 템플릿(코드)으로 구성하고 Stack을 생성하여 인프라를 구성 가능
+- 인프라를 코드로 정의하고 프로비저닝할 수 있음
 
 ### AWS Transcribe ###
 - 음성을 텍스트로 변환해줌
