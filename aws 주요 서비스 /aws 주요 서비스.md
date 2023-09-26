@@ -391,16 +391,19 @@ DAX는 복잡한 통합 코드 없이 캐싱 로직을 자동으로 처리
 - 지표, 이벤트, 환경 상태 등의 애플리케이션 정보를 확인 가능
 - 개발, 테스트 및 프로덕션 사용 사례를 위해 여러 환경을 쉽게 생성 가능
 
-## Computing Saving Plans ##
+### Computing Saving Plans ###
 - 가장 유연하게 인스턴스 유형 변경 가능
 - 최대 66% 절감
 - EC2 인스턴스 패밀리, 인스턴스 사이즈, AZ, 리전, OS, Tenacy 관계 없이 적용
 - Fargate 적용가능
 - 기존 컨버터블 RI와 할인율 동일
 
-## EC2 Instance Savings Plan ##
+### EC2 Instance Savings Plan ###
 - 최고의 절감 효과
 - 최대 72% 절감
 - AZ, 인스턴스 사이즈, OS, Tenancy 관계 없이 적용
 - 리전, 인스턴스 패밀리는 지정이 필요함
 - 기존 표준 RI와 할인율 동일
+
+### Transfer Acceleration ###
+- 전송에 영향을 미칠 수 있는 인터넷 라우팅, 혼잡 및 속도의 가변성을 줄이고 원격 애플리케이션을 위해 S3까지의 거리를 논리적트로 단축
