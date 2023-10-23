@@ -2,3 +2,6 @@
 [udemy](https://www.udemy.com/)
 
 # 지속적으로 업로드 예정입니다.
+
+# AWS SAA 자격증 취득 (23.10.23)
+https://www.credly.com/badges/be5b16cf-1269-44b9-b4c8-3cb298ed27d4/public_url
